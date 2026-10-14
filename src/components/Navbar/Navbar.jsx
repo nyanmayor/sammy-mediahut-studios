@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { siteConfig } from "../../data/siteConfig";
 import logo from "../../assets/mediahut-logo.png";
+import logoDark from "../../assets/mediahut-logo-dark.png";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -130,6 +131,15 @@ export default function Navbar() {
             aria-modal="true"
             role="dialog"
           >
+            {/* Mobile menu logo */}
+            <div className="mb-4">
+              <img
+                src={logoDark}
+                alt="MediaHut Studios"
+                className="h-16 w-auto"
+              />
+            </div>
+
             <nav className="flex flex-col gap-6" aria-label="Mobile navigation">
               {navLinks.map(({ label, to }, i) => (
                 <motion.div
